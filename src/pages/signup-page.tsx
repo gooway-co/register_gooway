@@ -20,7 +20,7 @@ import { fetchCategories } from "../services/category.service";
 import { generateSecurePassword } from "../services/password.service";
 import { Toaster, toast } from 'react-hot-toast'
 import swal from 'sweetalert';
-
+import API_URL from "../core/environment";
 
 
 const carouselSlides = [
@@ -198,8 +198,7 @@ function SignUpPageContent() {
   
     try {
       // Crear usuario administrador
-      const responseUser = await axios.post(
-        "http://localhost:3000/api/users/register",
+      const responseUser = await axios.post(`${API_URL}/users/register`,
         payloadUser,
         {
           headers: {
@@ -214,12 +213,8 @@ function SignUpPageContent() {
       }
   
       if ([200, 201].includes(responseUser.status)) {
-        // Agregar userAdminId al payload del negocio
         formDataBusiness.append("userAdminId", responseUser.data.data[0]._id);
-
-  
-        const responsePartner = await axios.post(
-          "http://localhost:3000/api/partners/createPartner",
+        const responsePartner = await axios.post(`${API_URL}/partners/createPartner`,
           formDataBusiness,
           {
             headers: {

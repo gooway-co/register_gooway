@@ -25,7 +25,8 @@
     "react-hot-toast": "^2.5.1",
     "react-phone-input-2": "^2.15.1",
     "react-router-dom": "^7.1.1",
-    "sweetalert": "^2.1.2"
+    "sweetalert": "^2.1.2",
+    "vercel": "^39.2.6"
   },
   "devDependencies": {
     "@types/prop-types": "^15.7.14",
