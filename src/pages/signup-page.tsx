@@ -26,36 +26,36 @@ import API_URL from "../core/environment";
 const carouselSlides = [
   {
     title: {
-      en: "Create your free account",
-      es: "Crea tu cuenta gratuita",
+      en: "Join our network of allies!",
+      es: "¡Únete a nuestra red de aliados!",
     },
     description: {
-      en: "Explore GitHub's core features for individuals and organizations.",
-      es: "Explora las características principales de GitHub para individuos y organizaciones.",
+      en: "Sign up today and take your business to new heights by connecting with a wide audience looking for the best of what you have to offer.",
+      es: "Regístrate hoy y lleva tu negocio a nuevas alturas, conectando con una amplia audiencia que busca lo mejor de lo que tienes para ofrecer.",
     },
     image:
       "https://ca-times.brightspotcdn.com/dims4/default/694d0d7/2147483647/strip/false/crop/1515x1000+0+0/resize/1486x981!/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Fec%2F48%2F75fb9d684e1b9673520e911a8a3c%2Fun-destino-para-gozar-958578.JPG",
   },
   {
     title: {
-      en: "Collaborate with others",
-      es: "Colabora con otros",
+      en: "Make quick and easy reservations.",
+      es: "Facilita reservas rápidas y sencillas",
     },
     description: {
-      en: "Work together on code with teams of all sizes.",
-      es: "Trabaja en equipo en código con equipos de todos los tamaños.",
+      en: "As an ally, you will have access to a platform that allows your customers to make reservations quickly and easily.",
+      es: "Como aliado, tendrás acceso a una plataforma que permite a tus clientes hacer reservas de manera rápida y sencilla.",
     },
     image:
       "https://media.staticontent.com/media/pictures/9495889e-54f9-40d2-939d-b04bf30b47c7",
   },
   {
     title: {
-      en: "Build better software",
-      es: "Construye mejor software",
+      en: "Smart data for your business",
+      es: "Datos inteligentes para tu negocio",
     },
     description: {
-      en: "Use the tools trusted by developers worldwide.",
-      es: "Utiliza las herramientas en las que confían los desarrolladores de todo el mundo.",
+      en: "Analyze, optimize, and grow with our analytics tool. Clear data for faster and more effective decisions.",
+      es: "Analiza, optimiza y crece con nuestra herramienta de analítica. Datos claros para decisiones más rápidas y efectivas.",
     },
     image:
       "https://mediaim.expedia.com/destination/1/8c291674f2c8106df6e67ae3edb87da5.jpg",
