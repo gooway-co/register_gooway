@@ -5,6 +5,7 @@ import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
+import { renderToString } from 'react-dom/server'; // Para renderizar el icono en HTML
 
 interface SimpleMapProps {
   onLocationSelect: (lat: number, lng: number) => void;
@@ -13,6 +14,17 @@ interface SimpleMapProps {
 const SimpleMap: React.FC<SimpleMapProps> = ({ onLocationSelect }) => {
   const mapRef = useRef<L.Map | null>(null);
   const markerRef = useRef<L.Marker | null>(null);
+
+  // Crear un ícono personalizado usando FontAwesome
+  const createCustomIcon = () =>
+    L.divIcon({
+      className: '', // Elimina clases predeterminadas para estilos personalizados
+      html: renderToString(
+        <FontAwesomeIcon icon={faMapMarkerAlt} style={{ color: '#ff0000', fontSize: '30px' }} />
+      ),
+      iconSize: [24, 24], // Tamaño del ícono
+      iconAnchor: [12, 24], // Punto de anclaje (mitad inferior del ícono)
+    });
 
   const locateUser = () => {
     if (navigator.geolocation) {
@@ -28,7 +40,9 @@ const SimpleMap: React.FC<SimpleMapProps> = ({ onLocationSelect }) => {
           if (markerRef.current) {
             markerRef.current.setLatLng([latitude, longitude]);
           } else {
-            markerRef.current = L.marker([latitude, longitude]).addTo(mapRef.current!);
+            markerRef.current = L.marker([latitude, longitude], {
+              icon: createCustomIcon(), // Usar el ícono personalizado
+            }).addTo(mapRef.current!);
           }
         },
         (error) => {
@@ -45,11 +59,11 @@ const SimpleMap: React.FC<SimpleMapProps> = ({ onLocationSelect }) => {
       mapRef.current = L.map('map', {
         center: [0, 0],
         zoom: 12,
-        scrollWheelZoom: false
+        scrollWheelZoom: false,
       }).setView([4.7110, -74.0721], 5);
 
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
       }).addTo(mapRef.current);
 
       mapRef.current.on('click', (e: L.LeafletMouseEvent) => {
@@ -59,7 +73,9 @@ const SimpleMap: React.FC<SimpleMapProps> = ({ onLocationSelect }) => {
         if (markerRef.current) {
           markerRef.current.setLatLng(e.latlng);
         } else {
-          markerRef.current = L.marker(e.latlng).addTo(mapRef.current!);
+          markerRef.current = L.marker(e.latlng, {
+            icon: createCustomIcon(), // Usar el ícono personalizado
+          }).addTo(mapRef.current!);
         }
       });
 
@@ -78,16 +94,17 @@ const SimpleMap: React.FC<SimpleMapProps> = ({ onLocationSelect }) => {
   return (
     <div style={{ position: 'relative' }}>
       <button
+        type="button" 
         onClick={locateUser}
         style={{
           position: 'absolute',
           top: '10px',
-          right: '10px', // Cambiado para que esté a la derecha
+          right: '10px',
           zIndex: 1000,
-          backgroundColor: '#000', // Fondo negro
+          backgroundColor: '#000',
           color: '#fff',
           border: 'none',
-          borderRadius: '50%', // Hace que el botón sea circular
+          borderRadius: '50%',
           width: '40px',
           height: '40px',
           display: 'flex',
@@ -97,8 +114,7 @@ const SimpleMap: React.FC<SimpleMapProps> = ({ onLocationSelect }) => {
           cursor: 'pointer',
         }}
       >
-      <FontAwesomeIcon icon={faMapMarkerAlt} />
-
+        <FontAwesomeIcon icon={faMapMarkerAlt} />
       </button>
       <div id="map" style={{ height: '200px', width: '100%' }} />
     </div>
