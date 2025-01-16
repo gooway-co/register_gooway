@@ -407,7 +407,7 @@ function SignUpPageContent() {
                       required
                       className="h-20"
                       minLength={100}
-                      maxLength={500}
+                      maxLength={850}
                     />
                     {errors.businessDescription && (
                       <p className="text-red-500 text-sm mt-1">
