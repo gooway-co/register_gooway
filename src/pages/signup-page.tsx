@@ -279,8 +279,6 @@ function SignUpPageContent() {
     } else if (formData.businessDescription.trim().length < 100){
       newErrors.businessDescription = t.businessDescriptionLengthError; // Mensaje para la longitud inválida
 
-    }else if (formData.businessDescription.trim().length > 250) {
-      newErrors.businessDescription = t.businessDescriptionMaxLengthError; // Mensaje para la longitud inválida
     }
 
     if (!formData.businessEmail.trim()) {
@@ -407,7 +405,6 @@ function SignUpPageContent() {
                       required
                       className="h-20"
                       minLength={100}
-                      maxLength={850}
                     />
                     {errors.businessDescription && (
                       <p className="text-red-500 text-sm mt-1">

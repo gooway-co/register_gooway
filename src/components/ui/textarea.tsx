@@ -8,7 +8,6 @@ interface TextareaProps {
   required?: boolean;
   className?: string;
   minLength?: number; // Longitud mínima opcional
-  maxLength?: number; // Longitud máxima opcional
 }
 
 export function Textarea({
@@ -30,7 +29,6 @@ export function Textarea({
       required={required}
       className={`w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 ${className}`}
       minLength={minLength} // Aplicar la longitud mínima si se proporciona
-      maxLength={maxLength} // Aplicar la longitud máxima si se proporciona
     ></textarea>
   );
 }
