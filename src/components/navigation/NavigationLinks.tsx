@@ -8,11 +8,9 @@ interface NavigationLinksProps {
 
 const links = [
   { href: '/', label: 'Inicio' },
-  { href: '/eat', label: 'Dónde comer' },
-  { href: '/stay', label: 'Hoteles' },
-  { href: '/activities', label: 'Que hacer?' },
-  { href: '/places', label: 'Lugares' },
-  { href: '/map', label: 'Mapa' },
+  { href: '/eat', label: 'Explorar' },
+  { href: '/places', label: 'Aliados' },
+  { href: '/stay', label: 'Resgistra tu negocio' },
 ];
 
 const NavigationLinks: React.FC<NavigationLinksProps> = ({ className, isMobile }) => {

@@ -20,11 +20,6 @@ const Header: React.FC = () => {
 
           {/* Contenedor para el texto y los botones de descarga */}
           <div className="hidden md:flex items-center space-x-4">
-            {/* Texto de descarga */}
-            <span className="text-sm font-medium text-gray-700">
-              Descargar la app Gooway aquí:
-            </span>
-            {/* Botones de descarga */}
             <DownloadButtons />
           </div>
 
