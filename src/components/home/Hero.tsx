@@ -12,7 +12,7 @@ const Hero: React.FC = () => {
       <div className="absolute inset-0 bg-gradient-to-r  to-blue-800 opacity-50"></div>
 
       {/* Contenido */}
-      <div className="relative mx-auto px-4 s h-8 py-24" style={{height: "70vh"}}>
+      <div className="relative mx-auto flex items-center justify-center px-4 s h-8 py-24" style={{height: "85vh"}}>
         <div className="text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
             Descubre tu Escapada Costera Perfecta

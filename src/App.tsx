@@ -8,6 +8,10 @@ import Carousel from './components/carousel/Carousel';
 import MapSection from './components/home/MapSection';
 import LearnAboutCartagena from './components/home/LearnAboutCartagena';
 import Footer from './components/footer/Footer';
+import InfoChat from './components/home/InfoChat';
+import InfoDownloadApp from './components/home/InfoDownloadApp';
+import BannerPartner from './components/bannerPartner/partner';
+
 
 const App: React.FC = () => {
 
@@ -35,15 +39,27 @@ const App: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen">
       <Header />
       <main className="pt-16">
         <Hero />
-        <ExploreCity title='Conversa con Ana, tu guía turística virtual' description='Descubre destinos, planifica tus viajes y obtén recomendaciones únicas con Ana, tu experta en turismo. ¡Haz de cada aventura algo especial!' />
+        
+        <div style={{padding: "90px 0px"}}>
+          <InfoDownloadApp />
+        </div>
+
+        <div>
+          <InfoChat/>
+        </div>
+       
+
+        <div style={{padding: "90px 0px"}}>
+          <Carousel items={item} />
+        </div>
+       
+        
         <TalkToAna />
-        <Carousel items={item} />
-        <MapSection />
-        <LearnAboutCartagena />
+        <BannerPartner />
         {/* Puedes agregar más secciones aquí */}
       </main>
       <DownloadBanner />

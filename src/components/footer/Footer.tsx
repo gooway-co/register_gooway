@@ -3,16 +3,16 @@ import { FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-blue-600 text-white py-8">
+    <footer className="bg-light-gray-background text-black py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Sección de selección de idioma */}
+        {/* Sección de selección de idioma 
         <div className="flex justify-end mb-4">
           <label htmlFor="language" className="mr-2">Idioma:</label>
           <select id="language" name="language" className="bg-blue-700 text-white px-3 py-1 rounded">
             <option value="es">Español</option>
             <option value="en">English</option>
           </select>
-        </div>
+        </div>*/}
         
         {/* Enlaces rápidos */}
         <div className="flex flex-col md:flex-row justify-between items-center mb-6">
@@ -36,7 +36,7 @@ const Footer: React.FC = () => {
         </div>
         
         {/* Derechos de autor */}
-        <div className="text-center text-sm text-gray-300">
+        <div className="text-center text-sm text-gray-600">
           &copy; {new Date().getFullYear()} Gooway. Todos los derechos reservados.
         </div>
       </div>

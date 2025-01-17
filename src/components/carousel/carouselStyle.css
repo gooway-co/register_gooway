@@ -4,83 +4,103 @@
 }
 
 .carousel-container {
-    margin: 0px 50px;
-    max-width: 80rem;
-  }
-  
-  .carousel-item {
-    padding: 0 10px; /* Separación entre los slides */
-    box-sizing: border-box; /* Asegurar que el padding no afecte el tamaño total */
-  }
-  
-  .carousel-image {
-    position: relative;
-    height: 220px;
-    background-size: cover;
-    background-position: center;
-    border-radius: 10px;
-    cursor: pointer;
-    overflow: hidden;
-  }
-  
+  margin: 0px 50px;
+  max-width: 80rem;
+}
 
-  .carousel-image::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(0deg, rgba(0,0,0,0.7847732843137255) 0%, rgba(0,0,0,0.4934567577030813) 34%, rgba(0,212,255,0) 80%);
-    z-index: 1; /* Poner el gradiente encima de la imagen */
-    pointer-events: none; /* Asegura que no interfiere con los clics en la imagen */
-  }
-  
-  .carousel-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Esto asegura que la imagen no cambie de tamaño */
-    border-radius: 10px;
-    z-index: 0; /* Poner la imagen debajo del gradiente */
-  }
+.carousel-item {
+  padding: 0 10px;
+  /* Separación entre los slides */
+  box-sizing: border-box;
+  /* Asegurar que el padding no afecte el tamaño total */
+}
 
-  .carousel-title {
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 16px;
-    font-weight: bold;
-    z-index: 99;
+.carousel-image {
+  position: relative;
+  height: 220px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+
+.carousel-image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.7847732843137255) 0%, rgba(0, 0, 0, 0.4934567577030813) 34%, rgba(0, 212, 255, 0) 80%);
+  z-index: 1;
+  /* Poner el gradiente encima de la imagen */
+  pointer-events: none;
+  /* Asegura que no interfiere con los clics en la imagen */
+}
+
+.carousel-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Esto asegura que la imagen no cambie de tamaño */
+  border-radius: 10px;
+  z-index: 0;
+  /* Poner la imagen debajo del gradiente */
+}
+
+.carousel-title {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  z-index: 99;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 10;
+  background-color: #119d47;
+  display: grid;
+  border-radius: 30px;
+  margin: 0px -10px;
+  color: white;
+  padding: 10px;
+  /* border-radius: 10%; */
+}
+
+.arrow.prev {
+  left: -30px;
+}
+
+.arrow.next {
+  right: -30px;
+}
+
+.arrow:hover {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.8);
+  /* Cambiar el fondo al pasar el mouse */
+}
+
+
+@media (max-width: 768px) {
+  .section-carusel {
+    display: block;
   }
-  
-  .arrow {
-    position: absolute; 
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
-    z-index: 10; 
-    background-color: #119d47;
-    display: grid;
-    border-radius: 30px;
-    margin: 0px -10px;
-    color: white;
-    padding: 10px;
-    /* border-radius: 10%; */
+}
+
+/* Pantallas muy pequeñas (teléfonos pequeños) */
+@media (max-width: 480px) {
+  .section-carusel {
+    display: block;
   }
-  
-  .arrow.prev {
-    left: -30px; 
-  }
-  
-  .arrow.next {
-    right: -30px; 
-  }
-  
-  .arrow:hover {
-    color: white;
-    background-color: rgba(0, 0, 0, 0.8); /* Cambiar el fondo al pasar el mouse */
-  }
-  
+}

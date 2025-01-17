@@ -22,8 +22,8 @@ const NavigationLinks: React.FC<NavigationLinksProps> = ({ className, isMobile }
           href={href}
           className={
             isMobile
-              ? "block px-3 py-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-50"
-              : "text-gray-700 hover:text-blue-600"
+              ? "block px-3 py-2 rounded-md text-white hover:text-blue-600 hover:bg-gray-50"
+              : "text-white hover:text-blue-600"
           }
         >
           {label}

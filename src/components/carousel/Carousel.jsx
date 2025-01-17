@@ -51,27 +51,30 @@ const Carousel = ({ items }) => {
 
   return (
     <>
-      <div className="max-w-7xl mx-auto mb-6  lg:pl-8">
-        <h2 className="text-3xl font-bold text-green-600 ">Conoce lo mejor de Cartagena</h2>
-        <p className="text-gray-600 max-w-2xl">¿Qué tan altas son tus expectativas? ¡Estamos seguros de que aquí las superarás!</p>
-      </div>
-
-      <section className="section-carusel">
-        <div className="carousel-container">
-          <Slider {...settings}>
-            {items.map((item) => (
-              <div key={item.id} className="carousel-item">
-                <div
-                  className="carousel-image"
-                  style={{ backgroundImage: `url(${item.image})` }}
-                >
-                  <div className="carousel-title">{item.title}</div>
-                </div>
-              </div>
-            ))}
-          </Slider>
+      <div className="mb-6  px-4 sm:px-6 lg:pl-8">
+        <div className="max-w-7xl mb-8 mx-auto ">
+          <h3 className="mb-2 text-4xl font-semibold sm:text-5xl text-green-600">Conoce los mejores lugares</h3>
+          <p className="text-gray-600 max-w-2xl text-lg">¿Qué tan altas son tus expectativas? ¡Estamos seguros de que aquí las superarás!</p>
         </div>
-      </section>
+
+        <section className="section-carusel">
+          <div className="carousel-container">
+            <Slider {...settings}>
+              {items.map((item) => (
+                <div key={item.id} className="carousel-item">
+                  <div
+                    className="carousel-image"
+                    style={{ backgroundImage: `url(${item.image})` }}
+                  >
+                    <div className="carousel-title">{item.title}</div>
+                  </div>
+                </div>
+              ))}
+            </Slider>
+          </div>
+        </section>
+      </div>
+      
     </>
    
   );

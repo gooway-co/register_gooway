@@ -1,3 +1,40 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.container-info-ana {
+    max-width: 80rem;
+    display: grid;
+    align-items: center;
+    justify-content: center; /* Centrar horizontalmente el contenido */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6rem;
+    margin: 0 auto; /* Centrar el contenedor en la página */
+}
+
+
+@media (max-width: 1024px) {
+    .container-info-ana {
+        grid-template-columns: 1fr; /* Asegúrate de que no hay `order` aquí */
+    }
+}
+
+/* Pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+    .container-info-ana {
+        grid-template-columns: 1fr; /* Asegúrate de que no hay `order` aquí */
+    }
+}
+
+/* Pantallas muy pequeñas (teléfonos pequeños) */
+@media (max-width: 480px) {
+    .container-info-ana {
+        padding: 40px 10px;
+        gap: 1.5rem;
+    }
+
+    .container-info-ana img {
+        max-width: 90%; /* Escala las imágenes */
+        height: auto; /* Mantén la proporción */
+    }
+}
